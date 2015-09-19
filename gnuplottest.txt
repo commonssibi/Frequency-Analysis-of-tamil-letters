@@ -1,0 +1,29 @@
+1	2814
+5	1935
+6	1883
+7	1556
+
+
+set datafile separator ','
+
+plot '/home/sibi/Desktop/gnuplottest.csv' using 2:xticlabels(1)
+
+plot '/home/sibi/Desktop/gnuplottest.csv' using (column(0)):2:3:xticlabel(1) with labels
+plot '/home/sibi/Desktop/gnuplottest.csv' using (column(0)):2:3 with labels(1)
+
+Frequency , Letter , number 
+plot '/home/sibi/Desktop/gnuplottest.csv' using (column(0)):1:2 with labels
+
+set key font ",10"
+set terminal svg size 800,600 font "DejaVu Sans,16"
+
+
+set terminal svg enhanced size 1000 1000 fname "Times" fsize 36
+set output "times.svg"
+
+set terminal wxt size 1000,500
+
+set ytics .5
+set xtics 30
+plot '/home/sibi/Desktop/gnuplottest.csv' using (column(0)):4:3 with labels
+
